@@ -1,0 +1,39 @@
+# ---------- Зависимости ----------
+# node_modules восстанавливаются командой `npm install`,
+# хранить их в репозитории не нужно.
+node_modules/
+*/node_modules/
+**/node_modules/
+
+# ---------- Системный мусор macOS ----------
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# ---------- Логи ----------
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ---------- Переменные окружения ----------
+# .env-файлы могут содержать секреты, в репозиторий не кладём.
+.env
+.env.local
+.env.*.local
+
+# ---------- Редакторы и IDE ----------
+.idea/
+.vscode/
+
+# ---------- Сборки и кэш ----------
+dist/
+build/
+.cache/
+.parcel-cache/
+
+# ---------- Покрытие тестами ----------
+coverage/

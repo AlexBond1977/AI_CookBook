@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CookBook — Recipes</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="site-header">
+    <div class="container header-inner">
+        <h1 class="logo" id="logo-btn" role="button" tabindex="0">🍳 CookBook</h1>
+        <p class="tagline">Find your recipe</p>
+    </div>
+</header>
+
+<main class="container">
+
+    <!-- ЭКРАН: ГЛАВНАЯ -->
+    <section id="home-view" class="view">
+        <div class="controls">
+            <input
+                    type="search"
+                    id="search-input"
+                    class="search-input"
+                    placeholder="Search by title…"
+                    autocomplete="off"
+            />
+            <select id="category-filter" class="category-filter">
+                <option value="">All categories</option>
+            </select>
+        </div>
+
+        <!-- Блок всех рецептов (главный список, реагирует на поиск и фильтр) -->
+        <section class="block" id="all-block">
+            <h2 class="block-title">📖 All Recipes</h2>
+            <div class="cards-grid" id="recipes-grid"></div>
+            <p class="empty-state hidden" id="recipes-empty">No recipes match your search</p>
+        </section>
+
+        <!-- Блок избранных рецептов -->
+        <section class="block" id="favorites-block">
+            <h2 class="block-title">❤️ Favorite Recipes</h2>
+            <div class="cards-grid" id="favorites-grid"></div>
+            <p class="empty-state hidden" id="favorites-empty">No favorites yet</p>
+        </section>
+
+        <!-- Блок недавно просмотренных -->
+        <section class="block" id="recent-block">
+            <h2 class="block-title">🕒 Recently Viewed</h2>
+            <div class="cards-grid" id="recent-grid"></div>
+            <p class="empty-state hidden" id="recent-empty">You haven't viewed anything yet</p>
+        </section>
+    </section>
+
+    <!-- ЭКРАН: СТРАНИЦА РЕЦЕПТА -->
+    <section id="recipe-view" class="view hidden">
+        <button type="button" id="back-btn" class="back-btn">← Back</button>
+        <div id="recipe-detail"></div>
+    </section>
+
+    <!-- ГЛОБАЛЬНЫЙ ЛОАДЕР -->
+    <div id="global-loader" class="loader-overlay hidden">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- ГЛОБАЛЬНАЯ ОШИБКА ЗАГРУЗКИ -->
+    <div id="global-error" class="error-state hidden">
+        <p>Failed to load</p>
+        <button type="button" id="retry-btn" class="retry-btn">Retry</button>
+    </div>
+
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <p>CookBook — a study project built with the help of AI.</p>
+    </div>
+</footer>
+
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
